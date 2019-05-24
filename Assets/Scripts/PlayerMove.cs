@@ -17,21 +17,13 @@ public class PlayerMove : MonoBehaviour
 
     private Vector3 position;
     private Vector3 rotation;
-  
 
     public float movementSpeed = 0.2f;
     public float rotationSpeed = 0.2f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        position = this.transform.position;
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
+        position = this.transform.position;
         if (Input.GetKey(KeyCode.D))
         {
             position.x += movementSpeed;
@@ -52,6 +44,8 @@ public class PlayerMove : MonoBehaviour
             position.z += movementSpeed;
             this.transform.position = position;
         }
+        /*
+
         if (Input.GetMouseButtonDown(1))    //right mouse button
         {
              //CameraRotation();
@@ -70,9 +64,10 @@ public class PlayerMove : MonoBehaviour
             }
                 
       
-        }
+        }*/
     }
 
+    //TODO
     private void CameraRotation()
     {
         float mouseX = Input.GetAxis(mouseXInputName) * mouseSensitivity * Time.deltaTime;
