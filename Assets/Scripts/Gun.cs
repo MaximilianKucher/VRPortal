@@ -5,6 +5,10 @@ public class Gun : MonoBehaviour
     // The Camera object from the players FOV
     public Camera fpsCam;
 
+    // Portals, very bad coding, I know, I know (^:
+    public GameObject bluePortal; // left trigger
+    public GameObject orangePortal; // right trigger
+
     // Just to recognize a mouse pressed button
     void Update()
     {
@@ -12,7 +16,7 @@ public class Gun : MonoBehaviour
         {
             Shoot(true);
         }
-        else if (Input.GetKeyDown("Fire3"))
+        else if (Input.GetButtonDown("Fire2")) // KeyDown und Fire3?
         {
             Shoot(false);
         }
@@ -20,12 +24,15 @@ public class Gun : MonoBehaviour
     /// <summary>
     /// Raycast a shot. With the hit variable the position of the hit can be determind to spawn a portal. 
     /// </summary>
-    /// <param name="bluePortal">To different between a left and the right click portal</param>
-    void Shoot(bool bluePortal)
+    /// <param name="p_bluePortal">To different between a left and the right click portal</param>
+    void Shoot(bool p_bluePortal)
     {
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit))
         {
+            (p_bluePortal ? bluePortal : orangePortal).transform.position = hit.point;
+            (p_bluePortal ? bluePortal : orangePortal).transform.rotation = Quaternion.LookRotation(hit.normal);
+
             Debug.Log(hit.transform.name);
         }
     }
