@@ -38,7 +38,7 @@ public class Gun : MonoBehaviour
                
             }
 
-            Debug.Log(hit.transform.name);
+            //Debug.Log(hit.transform.name);
         }
     }
 }

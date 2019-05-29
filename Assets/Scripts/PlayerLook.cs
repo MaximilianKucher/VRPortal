@@ -30,18 +30,18 @@ public class PlayerLook : MonoBehaviour
 
         xAxisClamp += mouseY;
         
-        if (xAxisClamp > 90f)
-        {
-            xAxisClamp = 90f;
-            mouseY = 0f;
-            ClampXAxisRotationToValue(270f);
-        }
-        else if (xAxisClamp < -90f)
-        {
-            xAxisClamp = -90f;
-            mouseY = 0f;
-            ClampXAxisRotationToValue(90f);
-        }
+        //if (xAxisClamp > 90f)
+        //{
+        //    xAxisClamp = 90f;
+        //    mouseY = 0f;
+        //    ClampXAxisRotationToValue(270f);
+        //}
+        //else if (xAxisClamp < -90f)
+        //{
+        //    xAxisClamp = -90f;
+        //    mouseY = 0f;
+        //    ClampXAxisRotationToValue(90f);
+        //}
 
         transform.Rotate(Vector3.left * mouseY);
         playerBody.Rotate(Vector3.up * mouseX);
