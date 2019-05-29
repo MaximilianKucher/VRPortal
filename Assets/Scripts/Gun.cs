@@ -14,6 +14,7 @@ public class Gun : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
+
             Shoot(true);
         }
         else if (Input.GetButtonDown("Fire2")) // KeyDown und Fire3?
@@ -30,8 +31,12 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit))
         {
-            (p_bluePortal ? bluePortal : orangePortal).transform.position = hit.point;
-            (p_bluePortal ? bluePortal : orangePortal).transform.rotation = Quaternion.LookRotation(hit.normal);
+            if (hit.transform.tag != "Player")
+            {
+                (p_bluePortal ? bluePortal : orangePortal).transform.position = hit.point;
+                (p_bluePortal ? bluePortal : orangePortal).transform.rotation = Quaternion.LookRotation(hit.normal);
+               
+            }
 
             Debug.Log(hit.transform.name);
         }

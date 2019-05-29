@@ -15,6 +15,14 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float movementSpeed;
 
     private Vector3 position;
+    public float gravityValue = 2 * -9.81f;
+    public Vector3 gravity = new Vector3(0, 2 * -9.81f, 0);
+    private Rigidbody rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     /// <summary>
     /// Smoothed the movement of the player with variable Input Methods.
@@ -28,5 +36,10 @@ public class PlayerMove : MonoBehaviour
         Vector3 rightMovement = transform.right * horizInput;
 
         transform.position += (forwardMovement + rightMovement);
+    }
+
+    private void FixedUpdate()
+    {
+        rb.AddForce(gravity);
     }
 }
