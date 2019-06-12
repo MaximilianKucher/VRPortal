@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.protalaction.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\Hochschule Kahlsruhe\\Desktop\\VR_LAB_SS2019\\PortalClone\\protalAction\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "protalAction [Testing]"
+        }
+      }
+    }
+  ]
+}

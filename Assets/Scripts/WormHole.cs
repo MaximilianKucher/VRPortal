@@ -17,12 +17,14 @@ public class WormHole : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("SAHSADASLKD");
+
         if (other.tag == "Player" && delay <= 0)
         {
             otherPortal.GetComponent<WormHole>().delay = 1f;
 
 
-
+            /*
             other.transform.position = otherPortal.transform.position + otherPortal.transform.forward * 2;
             var spieler = player.GetComponent<PlayerMove>();
             var vec = otherPortal.transform.rotation.eulerAngles;
@@ -57,7 +59,7 @@ public class WormHole : MonoBehaviour
             {
                 spieler.gravity = new Vector3(0, 0, spieler.gravityValue);
                 Debug.Log("^Last. " + spieler.gravity);
-            }
+            }*/
 
         }
     }

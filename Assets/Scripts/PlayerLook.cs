@@ -16,7 +16,7 @@ public class PlayerLook : MonoBehaviour
     /// </summary>
     private void Awake()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         xAxisClamp = 0f;
     }
 
